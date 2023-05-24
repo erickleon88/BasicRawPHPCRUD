@@ -11,8 +11,8 @@ if(!empty($_GET['userid'])){
     if($success){
         header('Location: userlist.php');
     }else{
-        header('Location: index.php');
+        header('Location: /index.php');
     }
 }else{
-    header('Location: index.php');
+    header('Location: /index.php');
 }
