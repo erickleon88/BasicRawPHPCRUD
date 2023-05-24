@@ -28,9 +28,9 @@ if(!empty($_POST['idx'])&&!empty($_POST['user'])&&!empty($_POST['name'])&&!empty
     if($success){
         header('Location: userlist.php');
     }else{
-        header('Location: index.php');
+        header('Location: /index.php');
     }
 }else{
-    header('Location: index.php');
+    header('Location: /index.php');
 }
 ?>

@@ -16,7 +16,7 @@ mysqli_close($dbConnection);
     <title>Registered User List</title>
     <script>
         function reDir() {
-            window.location = 'https://localhost/practicasbd2/backend/index.php';
+            window.location = '/index.php';
         }
     </script>
 </head>
