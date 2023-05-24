@@ -16,9 +16,9 @@ mysqli_close($dbConnection);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--estilos para los iconos -->
-    <link rel="stylesheet" href="assets/iconos.css">
+    <link rel="stylesheet" href="/assets/iconos.css">
     <!-- aqui se irán añadiendo los estilos creados en cada nuevo módulo -->
-    <link href="assets/muestra.css" rel="stylesheet" type="text/css">
+    <link href="/assets/muestra.css" rel="stylesheet" type="text/css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -65,11 +65,11 @@ mysqli_close($dbConnection);
                                                                                         echo $record['nivel'];
                                                                                     } ?>"><br>
                 <label for="email">Email</label><br>
-                <input type="text" name="email" class="form-input" required value="<?php if (isset($record['email'])) {
+                <input type="email" name="email" class="form-input" required value="<?php if (isset($record['email'])) {
                                                                                         echo $record['email'];
                                                                                     } ?>"><br>
                 <label for="phone">Teléfono</label><br>
-                <input type="tel" name="phone" class="form-input" pattern="[0-9]{3}[-][0-9]{3}[-][0-9]{4}" required value="<?php if (isset($record['telefono'])) {
+                <input type="tel" name="phone" class="form-input" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required value="<?php if (isset($record['telefono'])) {
                                                                                         echo $record['telefono'];
                                                                                     } ?>"><br>
                 <label for="brand">Marca</label><br>
