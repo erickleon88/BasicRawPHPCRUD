@@ -49,14 +49,12 @@ mysqli_close($dbConnection);
                                                                                     } ?>"><br>
                 <br>
                 <fieldset>
-                    <legend>Selecciona tu sexo:</legend>
-                    <div>
-                        <input type="checkbox" id="woman" name="sex" value="M">
-                        <label for="woman">Mujer</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="men" name="sex" value="H">
+                    <legend>Seleciona tu sexo:</legend>
+                    <div id="sex" name="sex">
+                        <input id="men" name="sex" type="radio" value="H" />
                         <label for="men">Hombre</label>
+                        <input id="woman" name="sex" type="radio" value="M">
+                        <label for="woman">Mujer</label>
                     </div>
                 </fieldset>
                 <br>
@@ -88,11 +86,11 @@ mysqli_close($dbConnection);
                 <fieldset>
                     <legend>Estatus del usuario:</legend>
                     <div>
-                        <input type="checkbox" id="active" name="status" value="1">
+                        <input type="radio" id="active" name="status" value="1">
                         <label for="active">Activo</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="non-active" name="status" value="0">
+                        <input type="radio" id="non-active" name="status" value="0">
                         <label for="non-active">Inactivo</label>
                     </div>
                 </fieldset>
