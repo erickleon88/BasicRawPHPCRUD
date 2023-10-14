@@ -2,7 +2,7 @@
 function connectDb()
 {
     $host = "localhost";
-    $user = "";
+    $user = "root";
     $dbName = "pruebas";
     $conection = mysqli_connect($host, $user, "", $dbName) or die('Problemas con el server');
 

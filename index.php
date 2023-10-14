@@ -16,7 +16,7 @@ $result = mysqli_query($dbConnection, $query) or die('MySQL Error');
     <!--estilos para los iconos -->
     <link rel="stylesheet" href="assets/iconos.css">
     <!-- aqui se irán añadiendo los estilos creados en cada nuevo módulo -->
-    <link href="assets/muestra.css" rel="stylesheet" type="text/css">
+    <link href="assets/index.css" rel="stylesheet" type="text/css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -25,10 +25,9 @@ $result = mysqli_query($dbConnection, $query) or die('MySQL Error');
 
 <body>
     <div class="content">
-        <h1>Pagina de Registro de Usuarios</h1>
+        <h1 class="titlePage">Pagina de Registro de Usuarios</h1>
         <div class="main">
-            <p>Este Sitio fue hecho para realizar Practicas de la Materia Bases de Datos II.<br>
-                De la carrera ISC de la Universidad ICEP Campus Colima.
+            <p class="info">Asegura que los datos sean correctos antes de enviarlos<br>
             </p>
             <!--Formulario-->
             <form action="backend/adduser.php" method="POST" name="reguser">
@@ -38,7 +37,7 @@ $result = mysqli_query($dbConnection, $query) or die('MySQL Error');
                 <input type="text" name="name" class="form-input" required><br>
                 <br>
                 <fieldset>
-                    <legend>Seleciona tu sexo:</legend>
+                    <legend>Seleciona su sexo:</legend>
                     <div id="sex" name="sex">
                         <input id="men" name="sex" type="radio" value="H" />
                         <label for="men">Hombre</label>
@@ -53,7 +52,7 @@ $result = mysqli_query($dbConnection, $query) or die('MySQL Error');
                 <label for="email">Email</label><br>
                 <input type="email" name="email" class="form-input" required><br>
                 <label for="phone">Teléfono</label><br>
-                <input type="tel" name="phone" class="form-input" pattern="[0-9]{3}[0-9]{3}[0-9]{4}"required><br>
+                <input type="tel" name="phone" class="form-input" required><br>
                 <label for="brand">Marca</label><br>
                 <input type="text" name="brand" class="form-input" required><br>
                 <label for="comp">Compañia</label><br>
@@ -73,17 +72,20 @@ $result = mysqli_query($dbConnection, $query) or die('MySQL Error');
                     </div>
                 </fieldset>
                 <br>
-                <center><input class="form-btn" type="submit" name="submit" value="Registrar Usuario" /><br><input class="form-btn" type="button" value="Lista de Usuarios" onclick="reDir()" /></center>
+                <center>
+                    <input class="form-btn" type="submit" name="submit" value="Registrar Usuario" /><br><br>
+                    <input class="button-30" type="button" value="Lista de Usuarios" onclick="reDir()" />
+                </center>
             </form>
             <!--Fin Formulario-->
         </div>
     </div>
 
-<script>
-    function reDir(){
-        window.location = "backend/userlist.php";
+    <script>
+        function reDir() {
+            window.location = "backend/userlist.php";
         }
-</script>
+    </script>
 </body>
 
 </html>

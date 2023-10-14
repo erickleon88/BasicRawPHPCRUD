@@ -9,7 +9,7 @@ mysqli_close($dbConnection);
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -18,19 +18,17 @@ mysqli_close($dbConnection);
     <!--estilos para los iconos -->
     <link rel="stylesheet" href="/assets/iconos.css">
     <!-- aqui se irán añadiendo los estilos creados en cada nuevo módulo -->
-    <link href="/assets/muestra.css" rel="stylesheet" type="text/css">
+    <link href="/assets/moduser.css" rel="stylesheet" type="text/css">
     <!--Fonts-->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <title>Inicio</title>
+    <title>Actualizar usuario</title>
 </head>
-
 <body>
     <div class="content">
-        <h1>Pagina de Modificacion de Usuarios</h1>
+        <h1 class="titlePage">Pagina de Actualizacion de Usuario</h1>
         <div class="main">
-            <p>Este Sitio fue hecho para realizar Practicas de la Materia Bases de Datos II.<br>
-                De la carrera ISC de la Universidad ICEP Campus Colima.
+            <p class="info">Asegura que los datos sean correctos antes de enviarlos<br>
             </p>
             <!--Formulario-->
             <form action="updateuser.php" method="POST" name="upuser">
@@ -67,7 +65,7 @@ mysqli_close($dbConnection);
                                                                                         echo $record['email'];
                                                                                     } ?>"><br>
                 <label for="phone">Teléfono</label><br>
-                <input type="tel" name="phone" class="form-input" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" required value="<?php if (isset($record['telefono'])) {
+                <input type="tel" name="phone" class="form-input"  required value="<?php if (isset($record['telefono'])) {
                                                                                         echo $record['telefono'];
                                                                                     } ?>"><br>
                 <label for="brand">Marca</label><br>
@@ -96,7 +94,7 @@ mysqli_close($dbConnection);
                     </div>
                 </fieldset>
                 <br>
-                <center><input class="form-btn" type="submit" name="submit" value="Modificar Usuario" /><br><input class="form-btn" type="button" value="Lista de Usuarios" onclick="reDir()" /></center>
+                <center><input class="form-btn" type="submit" name="submit" value="Modificar Usuario" /><br><br><input class="button-30" type="button" value="Lista de Usuarios" onclick="reDir()" /></center>
             </form>
             <!--Fin Formulario-->
         </div>
@@ -104,9 +102,10 @@ mysqli_close($dbConnection);
 
     <script>
         function reDir() {
-            window.location = "userlist.php";
+            window.location = "/backend/userlist.php";
         }
     </script>
 </body>
+
 
 </html>

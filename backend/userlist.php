@@ -14,6 +14,7 @@ mysqli_close($dbConnection);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registered User List</title>
+    <link rel="stylesheet" href="/assets/userlist.css">
     <script>
         function reDir() {
             window.location = '/index.php';
@@ -25,16 +26,16 @@ mysqli_close($dbConnection);
     <div class="content">
 
         <div class="main">
-            <h1>Registered Users</h1>
-            <p>En esta practica creamos un CRUD sencillo utilizando la base de datos dada en la clase pasada
-                como ejemplo y base, ademas del uso de sesiones para poder visualizar esta lista.</p>
+            <h1 class="titlePage">Registros de Usuarios</h1>
+            <p class="descPage">Listado de usuarios registrados en la base de datos para ayuda y soporte a clientes que poseen lineas telefonicas de nuestros socios</p>
             <br>
-            <p>Si puedes ver esta pagina con este mensaje significa que te logueaste como administrador
-                mediante sesiones</p>
+            <input class="button-30" type="submit" onclick="reDir()" value="Agregar usuario"><br><br><br>
             <?php
             echo '<ol>';
             $i = 0;
-            echo '<table border="1">';
+            echo '<table border="1">
+            <tr id="headerTable"><td>ID</td><td>Nombre de ususario</td><td>Nombre Completo</td><td>Sexo</td><td>Nivel</td><td>Correo Electronico</td><td>Telefono</td><td>Marca de telefono</td><td>Compañia telefonica</td><td>Saldo</td><td>Estatus</td></tr>
+            ';
             foreach ($record as $item) {
                 $i++;
                 echo '<tr>';
@@ -49,17 +50,12 @@ mysqli_close($dbConnection);
                 echo '<td>' . $item['compañia'] . '</td>';
                 echo '<td>' . $item['saldo'] . '</td>';
                 echo '<td>' . $item['activo'] . '</td>';
-                echo '<td>' . '<a href="moduser.php?userid=' . $item['idx'] . '"> Update </a>' . '</td>';
-                echo '<td>' . '<a href="dropuser.php?userid=' . $item['idx'] . '"> Delete </a>' . '</td>';
-                if ($i % 12 == 0) {
-                    echo '</tr><tr>';
-                }
+                echo '<td>' . '<a class="updateUser" href="moduser.php?userid=' . $item['idx'] . '"> Actualizar </a>' . '</td>';
+                echo '<td>' . '<a class="dropUser" href="dropuser.php?userid=' . $item['idx'] . '"> Eliminar </a>' . '</td>';
                 echo '</tr>';
             }
             echo '</table>';
             echo '</ol>';
-            echo '<input type="submit" onclick="reDir()" value="Inicio"><br><br><br>';
-            echo '<a href="logout.php">Cerrar sesión</a>';
             echo '</div>';
             ?>
         </div>
